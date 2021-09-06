@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<center>
+<head>
+    <title>ML App</title>
+ </head>
+
+<body bgcolor="lightgreen">
+    <header>
+       <h1>Billboard Hit Songs Predictor</h1>
+    </header>
+    
+    
+    
+        <form action="{{ url_for('Predict')}}", method="POST">
+        <br><br>
+        <i><b><p>Enter Details of Songs</p></b></i>
+        <br><br>
+        <b>
+        <input type="text", name='danceability', placeholder='Danceability'>&nbsp;&nbsp;
+        <input type="text", name = 'energy', placeholder='Energy'>
+        <input type="text", name = 'key', placeholder='Key'><br><br>
+        <input type="text", name = 'speechiness', placeholder='Speechiness'>
+        <input type="text", name = 'acousticness', placeholder='Acousticness'>
+        <input type="text", name = 'liveness', placeholder='Liveness'><br><br>
+        <input type="text", name = 'instrumentalness', placeholder='Instrumentalness'>
+        <input type="text", name = 'valence', placeholder='Valence'>
+        <input type="text", name = 'tempo', placeholder='Tempo'><br><br>
+        <input type="text", name = 'duration', placeholder='Duration'>
+        <input type="text", name = 'loudness', placeholder='Loudness'><br><br>
+        <button type="text">Predict</button>
+        </b>
+        </form>
+    <br><br>
+    {% if prediction == 1%}
+    <h2 style="color:blue;text-align:center;">The song will become hit!</h2>
+    {% elif prediction == 0%}
+    <h2 style="color:red;text-align:center;">The song will not become hit</h2>
+    {% endif %}
+</body>
+</html>
